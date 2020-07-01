@@ -1,0 +1,24 @@
+{% extends 'carsforsale/layout.html' %}
+{% block pagetitle %}
+    <title>{{pagetitle}}</title>
+{% endblock %}
+
+{% block content %}
+<h3 class="car_info_heading">{{ car.title }}</h4>
+<div class="myfield col s12 m2">
+    <p class="datetime"> <b>Posted:</b> {{car.date }}</p><br>
+   <img src="{{ car.car_picture.url }}" width="500px" class="z-depth-5">
+   
+   <p class="price z-depth-4">{{ car.price}}</p>
+   <p class="carinfo_para grey z-depth-1"><b>Year:</b><br>{{ car.manufactured }}</p>
+   <p class="carinfo_para z-depth-4"><b>Mileage(km):</b><br>{{car.mileage}}</p>
+   <p class="carinfo_para grey z-depth-1"><b>Transmission:</b> <br>{{ car.transmission }}</p>
+   <p class="carinfo_para z-depth-4"><b>Fuel type:</b><br>{{ car.fuel_type }}</p>   
+   <p class="carinfo_para grey z-depth-1"><b>Color: </b><br>{{ car.color }}</p>
+   <p class="carinfo_para z-depth-4 desc"><b>Description:</b><br>{{ car.car_description }}</p>
+   <p class="carinfo_para grey z-depth-1"><b>Area:</b><br>{{ car.city }}, {{car.province}}</p>
+   <p class="carinfo_para z-depth-4"><b>Phone: </b><br>{{ car.phone}}</p>
+   <p class="carinfo_para grey z-depth-1"><b>Email: </b><br>{{ car.email }}</p>
+
+   
+{% endblock %}

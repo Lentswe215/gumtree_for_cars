@@ -1,0 +1,24 @@
+{% extends 'carsforsale/layout.html' %}
+{% block pagetitle %}
+    <title>{{ pagetitle }}</title>
+    {% endblock %}
+{% block content %}
+<h3 class="cars_heading">Available Cars</h4>
+<ul class="myfield">
+    {% for car in cars %}
+    <a href="/car_information/{{car.id}}">  
+    <li class="item">
+            <h4 class="cartitle">{{ car.title }}</h4>
+            <p class="datetime">{{ car.date }}</p>
+           <img src="{{car.car_picture.url}}" width="500px"class="z-depth-2">
+           <p class="price">{{car.price }}</p>    
+    </li>
+</a>
+
+    {% endfor%}
+    
+</ul>
+<style>
+   
+</style>
+{% endblock %}

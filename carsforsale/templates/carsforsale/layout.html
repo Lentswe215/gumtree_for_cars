@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'carsforsale/style.css' %}" type='text/css'>
+    <script src="https://kit.fontawesome.com/8c9f7b77e5.js" crossorigin="anonymous"></script>
+    {% block pagetitle %}
+
+    {% endblock %}
+</head>
+<body>
+   
+    
+    <header>
+        <a href="/"><h1>GUMTREE FOR CARS</h1></a>
+    </header>
+    
+    <form action="/search/" class="search" method="post">
+    {% csrf_token %}
+    <div class="row">
+        <div class="col">
+            <input type="text" name="searchbox" class="form-control" placeholder="Search for car" required>
+            <button type="submit" class="searchbtn"><i class="fa fa-search fa-2x"></i></button>
+        </div>
+    </div>
+    </form>
+    <div>
+     <div class="container">
+         <div class="inner">
+            {% block content %}
+
+            {% endblock %}
+    </div>
+ <a href="/admin" class="toAdmin center red darken-5 inline">Go to admin</a>
+ <style>
+    
+ </style>
+</body>
+</html>

@@ -1,0 +1,153 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+body{
+    background: #f4f4f4
+}
+.container {
+    width: 100vw;
+}
+h1{
+    background-color: #f7f7f7;
+    color: #06623b;
+    text-align: center;
+    font-size: 1000%;
+}
+h1:hover {
+    background-color: #06623b;
+    color: #f7f7f7;
+}
+.myfield a:hover {
+    opacity: 0.5;
+    text-decoration-color: red;
+    text-decoration: none;
+}
+.container {
+ width:67vw;
+ margin: auto;
+}
+.cars_heading {
+    background-color: #053521;
+    color: #dae1e7;
+    font-size: 76px;
+}
+
+.inner {
+    width: 100%;
+}
+
+.row {
+    background-color: #e1dde2;
+    width:100%;
+    padding: 0.4em 31em;
+    margin-top: 7px;
+    vertical-align: middle;
+}
+
+.form-control {
+    height: 46px;
+    width: 400px;
+    font-size: 20px;
+    padding-left: 12px;
+    vertical-align: middle;
+}
+.searchbtn {
+  padding: 0.6rem 0.8rem;
+  margin: 0.1rem;
+  line-height: 1.8;
+  border: none;
+  vertical-align: middle;
+  background-color: #053521;
+  color: #dae1e7;
+}
+.searchbtn:hover {
+  background-color: #03683e;
+    
+}
+.myfield{
+    background-color: #ececec;
+    padding: 20px;
+    text-align: center;
+}
+.item{
+    border: #06623b solid;
+    height: 50%
+}
+.item:hover{
+    border: none;
+    background-color: rgb(182, 199, 231);
+    transition: ease-in-out;
+}
+a {
+    text-decoration: none;
+}
+a:hover {
+    opacity: .5;
+    background-color: orange;
+}
+li{
+    list-style: none;
+}
+.cartitle {
+    font-size: xx-large;
+    margin-bottom: 1%;
+}
+.datetime {
+    color: #035aa6;
+    font-size: larger;
+}
+h3 {
+   background-color: #95389e;
+   text-align: center;
+   font-size: 500%;
+   background-size: cover;
+   margin: 7px;
+   text-transform: uppercase;
+}
+ul {
+   margin: 2%;
+}
+li {
+    margin: 10px;
+    padding: 10px;
+}
+p {
+    color: rgb(33, 46, 45);
+    font-size: 28 px;
+}
+
+.price {
+    color: red;
+    font-size: 150px;
+    text-decoration: none;
+}
+
+.car_info_heading {
+    background-color: #035aa6;
+    color: cornsilk;
+}
+img:active {
+    position: relative;
+    width: 70%;
+    height: 70%;
+ }
+
+ .carinfo_para {
+     height: auto;
+     padding: 0.2rem 14rem;
+ }
+
+.grey {
+    background-color: grey;
+    color: ivory;
+}
+
+.toAdmin {
+    color: antiquewhite;
+    font-weight: 500;
+    font-size: 20px;
+    left: 30%;
+}
+
