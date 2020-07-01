@@ -13,7 +13,7 @@ pip3 install Django
 
 # Download or clone the repository to you device.
 ## To clone the github repository 
- git clone 'repository link'
+ git clone https://github.com/Lentswe215/gumtree_for_cars.git
 
 # Go to the project folder
 ## To start the server
