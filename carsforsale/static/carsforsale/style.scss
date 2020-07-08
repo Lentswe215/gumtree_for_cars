@@ -37,10 +37,16 @@ nav {
     ul {
         list-style: none;
         display: flex;
-        font-size: 1.2rem;
+        font-size: 1.5rem;
         align-items: center;
-        justify-content: space-around;
+        justify-content: space-between;
+
+        li {
+            margin: 0 0.3rem;
+        }
+        
     }
+
     a{
         color: #06623b;
         text-decoration: none;
@@ -121,13 +127,6 @@ fieldset {
     border: none;
     width: 200px;
 }
-.form-control {
-    height: 46px;
-    width: 400px;
-    font-size: 20px;
-    padding-left: 12px;
-    vertical-align: middle;
-}
 .searchbtn {
   padding: 0.6rem 0.8rem;
   margin: 0.1rem;
@@ -144,22 +143,28 @@ fieldset {
 .car_info_heading {
     background-color: #035aa6;
     color: cornsilk;
-    font-size: 76px;
+    font-size: 56px;
     text-align: center;
     align-items: center;
 }
+.propic {
+    width: 60%;
+    border-radius: 50%;
+    margin: 1rem 18%;
+}
+
+.profile_info {
+    font-size: 3rem;
+    color: $primary-color;
+}
 .myfield{
-    background-color: #ececec;
+    // background-color: #;
     padding: 20px;
     text-align: center;
     font-size: 160%;
 
     a {
         text-decoration: none;
-    }
-    a:hover {
-        opacity: .5;
-        background-color: orange;
     }
     li{
         list-style: none;
@@ -208,6 +213,7 @@ img:active {
     width: 70%;
     height: 70%;
  }
+ 
 
  .carinfo_para {
      height: auto;
@@ -219,11 +225,7 @@ img:active {
     color: ivory;
 }
 }
-
-.toAdmin {
-    color: antiquewhite;
-    font-weight: 500;
-    font-size: 20px;
-    left: 30%;
+.large {
+    font-size: 1.2rem;
 }
 

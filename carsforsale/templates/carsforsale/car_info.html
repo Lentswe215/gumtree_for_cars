@@ -1,8 +1,14 @@
 {% extends 'carsforsale/layout.html' %}
-{% block pagetitle %}
-    <title>{{pagetitle}}</title>
+{% block navlinks %}
+    {% if user.is_authenticated%}
+    <li><a href="account/profile">Profile</a></li>
+    <li><a href="/postcar">Create car post</a></li>
+    <li><a href="account/logout">Logout</a></li>
+    {% else %}
+    <li><a href="account/register">Register</a></li>
+    <li><a href="account/login">Login</a></li>
+    {% endif %}
 {% endblock %}
-
 {% block content %}
 <h3 class="car_info_heading">{{ object.title }}</h4>
 <div class="myfield col s12 m2">

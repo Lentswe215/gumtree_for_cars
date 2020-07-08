@@ -4,9 +4,14 @@
     {% endblock %}
    
     {% block navlinks %}
-    <li><a href="/postcar">Post a car</a></li>
+    {% if user.is_authenticated%}
+    <li><a href="account/profile">Profile</a></li>
+    <li><a href="/postcar">Create car post</a></li>
+    <li><a href="account/logout">Logout</a></li>
+    {% else %}
     <li><a href="account/register">Register</a></li>
     <li><a href="account/login">Login</a></li>
+    {% endif %}
     {% endblock %}
 {% block content %}
 <h3 class="cars_heading">Available Cars</h3>

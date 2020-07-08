@@ -1,0 +1,18 @@
+{% extends 'carsforsale/layout.html' %}
+{% block navlinks %}
+    <li><a href="/">Home</a></li>
+    <li><a href="/postcar">Create car post</a></li>
+    <li><a href="account/logout">Logout</a></li>
+{% endblock %}
+{% block content %}
+<div class="jumbotron">
+    <h3 class="heading bg-dark">
+        {{ user.username }}
+    </h3>
+        <img src="{{user.profile.profile_pic.url}}" class="propic" alt="hello">
+        <h1 class="profile_info">Firstname : {{ user.first_name}}</h1>
+        <h1 class="profile_info">Lastname : {{ user.last_name}}</h1>
+        <h1 class="profile_info">Email : {{ user.email }}</h1>
+        <h1 class="profile_info">Dealership : {{ user.profile.Dealership }}</h1>
+</div>
+{% endblock %}
