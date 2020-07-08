@@ -9,7 +9,4 @@ urlpatterns = [
     path('car_information/<int:pk>', CarDetailView.as_view()),
     path('postcar/', CarCreateView.as_view()),
     url(r'^search/$', views.search),
-    path('login/', views.login)
-#     path('/register', views.login),
-#     path('/logout', views.login)
 ]

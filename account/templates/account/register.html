@@ -1,0 +1,24 @@
+{% extends 'carsforsale/layout.html'%}
+{% load crispy_forms_tags %}
+{% block navlinks %} 
+<li><a href="/">Home</a></li>
+<li><a href="/account/login">Login</a></li>
+{% endblock %}
+
+{% block content %} 
+<div class="content-section">
+    <h3 class="heading bg-primary">User Registration</h3>
+    <form action='' class="" method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group bg-dark p-3">
+            {{ form|crispy  }}
+        </fieldset>
+        <div>
+            <input type="submit" class="p-1 m-1 bg-primary large" value="Register">
+        </div>
+    </form>
+    <div class="py-3">
+        <small>Already have an account? <a href="/account/login">Login</a></small>
+    </div>
+</div>
+{% endblock %}

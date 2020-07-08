@@ -1,12 +1,12 @@
 {% extends 'carsforsale/layout.html' %}
 {% load crispy_forms_tags %}
 {%block content %}
-<h3 class="heading">Car upload</h3>
+<h3 class="heading bg-danger">Car upload</h3>
 <div>
 <form  method="POST">
     {% csrf_token %}
     <fieldset class='form-group p-2'>
-    {{ form | crispy}}
+    {{ form|crispy}}
 </fieldset>
 <div class="form-group">
     <input type="submit" class='btn bg-success large' value="Upload">

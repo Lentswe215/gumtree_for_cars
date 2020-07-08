@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   {% load static %}
   <link rel="stylesheet" href="{% static 'carsforsale/css/style.min.css' %}" type='text/css'>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
   <script src="https://kit.fontawesome.com/8c9f7b77e5.js" crossorigin="anonymous"></script>
   <title>Gumtree - For Cars</title>
 </head>
@@ -15,24 +16,31 @@
       <a href="/"><label for="brand">Gumtree For Cars</label></a>
     </h1>
     <ul>
-      <li><a href="/postcar">Post a car</a></li>
-      <li><a href="/register">Register</a></li>
-      <li><a href="/login">Login</a></li>
-
+     {% block navlinks %}
+     {% endblock %}
     </ul>
   </nav>
   <form action="/search/" class="search" method="post">
     {% csrf_token %}
     <div class="row">
-      <div class="col">
+      <div class="col md">
         <input type="text" name="searchbox" class="form-control" placeholder="Search for car" required>
-        <button type="submit" class="searchbtn"><i class="fa fa-search fa-2x"></i></button>
+      </div>
+      <div>
+        <button type="submit" class="searchbtn"><i class="fas fa-search"> Search</i></button>
       </div>
     </div>
   </form>
   <div>
     <div class="container">
       <div class="inner bg-light">
+        {% if messages %}
+          {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">
+              {{ message }} 
+            </div>
+          {% endfor %}
+        {% endif %}
         {% block content %}
 
         {% endblock %}
