@@ -6,19 +6,15 @@
 body{
     background: #f4f4f4
 }
+.navbar{
+    background-color: #1a1a1a;
+    color: #fff;
+    
+}
 .container {
     width: 100vw;
 }
-h1{
-    background-color: #f7f7f7;
-    color: #06623b;
-    text-align: center;
-    font-size: 1000%;
-}
-h1:hover {
-    background-color: #06623b;
-    color: #f7f7f7;
-}
+
 .myfield a:hover {
     opacity: 0.5;
     text-decoration-color: red;

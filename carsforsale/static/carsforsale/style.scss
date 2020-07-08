@@ -1,0 +1,227 @@
+ @import 'colors';
+ @import 'backcolors';
+
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+body{
+    background: #f4f4f4;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.navbar {
+    background: linear-gradient(to right bottom, #cac8c8, #fff,#cac8c8);
+    opacity: 0.9;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2.5rem;
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    top:0;
+    border-bottom: 2px #053521 solid;
+
+    h1 {
+        font-size: 3rem;
+    }
+    ul {
+        list-style: none;
+        display: flex;
+        font-size: 1.2rem;
+        align-items: center;
+        justify-content: space-around;
+    }
+    a{
+        color: #06623b;
+        text-decoration: none;
+        padding: 0.45rem;
+        margin: 0 0.25rem;
+        font-weight: 700;
+
+        &:hover {
+            color: $light-color;
+            background: #06623b;
+        }
+    }
+}
+
+.myfield a:hover {
+    opacity: 0.5;
+    text-decoration-color: red;
+    text-decoration: none;
+}
+.container {
+ width:67vw;
+ margin: 1.2rem auto;
+
+}
+.cars_heading {
+    background-color: #053521;
+    color: #dae1e7;
+    font-size: 76px;
+    text-align: center;
+}
+
+h3 {
+    margin-bottom: 5%;
+}
+
+.heading {
+    background-color: #27003d;
+    color: #fff;
+    font-size: 76px;
+    text-align: center;
+}
+
+
+.inner {
+    width: 100%;
+    border: none;
+}
+
+.row {
+    background-color: #dae1e7;
+    width:100%;
+    padding: 0.4em 31em;
+    margin-top: 5%;
+    vertical-align: middle;
+}
+fieldset {
+    background-color: #cac8c8;
+    color:#333;
+    font-family: sans-serif;
+    font-size: 1.5rem;
+    margin: 0 auto;
+
+    input {
+        width: 30%;
+        height: 25px;
+    }
+
+    
+}
+.btn {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 1rem;
+    padding: 1rem 2rem;
+    border: none;
+    width: 200px;
+}
+.form-control {
+    height: 46px;
+    width: 400px;
+    font-size: 20px;
+    padding-left: 12px;
+    vertical-align: middle;
+}
+.searchbtn {
+  padding: 0.6rem 0.8rem;
+  margin: 0.1rem;
+  line-height: 1.8;
+  border: none;
+  vertical-align: middle;
+  background-color: #053521;
+  color: #dae1e7;
+}
+.searchbtn:hover {
+  background-color: #03683e;
+    
+}
+.car_info_heading {
+    background-color: #035aa6;
+    color: cornsilk;
+    font-size: 76px;
+    text-align: center;
+    align-items: center;
+}
+.myfield{
+    background-color: #ececec;
+    padding: 20px;
+    text-align: center;
+    font-size: 160%;
+
+    a {
+        text-decoration: none;
+    }
+    a:hover {
+        opacity: .5;
+        background-color: orange;
+    }
+    li{
+        list-style: none;
+    }
+
+.item{
+    border: #06623b solid;
+    height: 50%
+}
+.item:hover{
+    border: none;
+    background-color: rgb(182, 199, 231);
+    transition: ease-in-out;
+}
+
+.cartitle {
+    font-size: xx-large;
+    margin-bottom: 1%;
+}
+.datetime {
+    color: #035aa6;
+    font-size: larger;
+}
+h3 {
+   text-align: center;
+   font-size: 500%;
+   background-size: cover;
+   margin: 7px;
+   text-transform: uppercase;
+}
+ul {
+   margin: 2%;
+}
+li {
+    margin: 10px;
+    padding: 10px;
+}
+p {
+    color: rgb(33, 46, 45);
+    font-size: 28 px;
+}
+
+.price {
+    color: red;
+    font-size: 150px;
+    text-decoration: none;
+}
+
+
+img:active {
+    position: relative;
+    width: 70%;
+    height: 70%;
+ }
+
+ .carinfo_para {
+     height: auto;
+     padding: 0.2rem 14rem;
+ }
+
+.grey {
+    background-color: grey;
+    color: ivory;
+}
+}
+
+.toAdmin {
+    color: antiquewhite;
+    font-weight: 500;
+    font-size: 20px;
+    left: 30%;
+}
+

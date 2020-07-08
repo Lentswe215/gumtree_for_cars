@@ -2,29 +2,48 @@ from django.shortcuts import render
 from django.contrib import messages
 from django.db.models import Q
 from django.http import HttpResponse, HttpResponseRedirect
+from django.views.generic import ListView, DetailView, CreateView
 from .models import Carsforsale
 
 
 # Create your views here.
-def cars(request):
-    carsAvailable = Carsforsale.objects.order_by('-date')[:20]
-
-    return render(request, 'carsforsale/cars.html', {
-        'cars': carsAvailable,
-        'pagetitle': 'available cars'
-    })
 
 
-def carInfo(request, id):
+class CarsListView(ListView):
+    model = Carsforsale
+    template_name = 'carsforsale/cars.html'
+    context_object_name = 'cars'
+    ordering = ['-date']
 
-    currentCar = Carsforsale.objects.get(id=id)
-    return render(request, 'carsforsale/car_info.html', {
-        'car': currentCar,
-        'pagetitle': currentCar.title
-        })
 
-    def __str__(self):
-        return self.title
+class CarCreateView(CreateView):
+    model = Carsforsale
+    template_name= 'carsforsale/car_upload.html'
+    fields = ['title',
+              'car_picture',
+              'price',
+              'make',
+              'model',
+              'manufactured',
+              'mileage',
+              'transmission',
+              'fuel_type',
+              'color',
+              'car_description',
+              'city',
+              'province',
+              'phone',
+              'email'
+              ]
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
+
+class CarDetailView(DetailView):
+    model = Carsforsale
+    template_name = 'carsforsale/car_info.html'
 
 
 def search(request):
@@ -49,4 +68,7 @@ def search(request):
                     'cars': match,
                     'pagetitle': search
                 })
-    
+
+
+def login(request):
+    return render(request, 'forms/login_form.html')
