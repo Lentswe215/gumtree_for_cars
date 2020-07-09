@@ -2,7 +2,8 @@ from django.shortcuts import render
 from django.contrib import messages
 from django.db.models import Q
 from django.http import HttpResponse, HttpResponseRedirect
-from django.views.generic import ListView, DetailView, CreateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from .models import Carsforsale
 
 
@@ -14,11 +15,14 @@ class CarsListView(ListView):
     template_name = 'carsforsale/cars.html'
     context_object_name = 'cars'
     ordering = ['-date']
-
-
-class CarCreateView(CreateView):
+    
+class CarDetailView(DetailView):
     model = Carsforsale
-    template_name= 'carsforsale/car_upload.html'
+    template_name = 'carsforsale/car_info.html'
+
+class CarCreateView(LoginRequiredMixin, CreateView):
+    model = Carsforsale
+    template_name= 'carsforsale/car_form.html'
     fields = ['title',
               'car_picture',
               'price',
@@ -33,17 +37,61 @@ class CarCreateView(CreateView):
               'city',
               'province',
               'phone',
-              'email'
+              'email',
+              'status'
+              ]
+
+    def form_valid(self, form):
+        form.instance.creator = self.request.user
+        return super().form_valid(form)
+
+class CarUpdateView(LoginRequiredMixin, UpdateView):
+    model = Carsforsale
+    template_name= 'carsforsale/car_form.html'
+    fields = ['title',
+              'car_picture',
+              'price',
+              'make',
+              'model',
+              'manufactured',
+              'mileage',
+              'transmission',
+              'fuel_type',
+              'color',
+              'car_description',
+              'city',
+              'province',
+              'phone',
+              'email', 
+              'status'
               ]
 
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
 
+    def test_func(self):
+        car = self.get_object()
+        if self.request.user == car.author:
+            return True
+        return False
 
-class CarDetailView(DetailView):
+class CarDeleteView(LoginRequiredMixin, DeleteView):
     model = Carsforsale
-    template_name = 'carsforsale/car_info.html'
+    template_name= 'carsforsale/car_delete.html'
+    # messages.success(request, 'Car successfully deleted')n 
+    success_url= '/'
+
+    def test_func(self):
+        car = self.get_object()
+        if self.request.user == car.author:
+            return True
+        return False
+
+
+
+
+
 
 
 def search(request):
@@ -61,11 +109,10 @@ def search(request):
                 Q(fuel_type__icontains=search_box)
             )
             if match:
-                return render(request, 'carsforsale/search.html', {'cars': match})
+                return render(request, 'carsforsale/search.html', {'cars': match, 'mytitle':search_box})
             else:
                 messages.error(request, 'Match not found')
                 return render(request, 'carsforsale/search.html', {
-                    'cars': match,
                     'pagetitle': search
                 })
 
