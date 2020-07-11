@@ -38,9 +38,9 @@ class CarCreateView(LoginRequiredMixin, CreateView):
               'province',
               'phone',
               'email',
-              'status'
+              'status',
+              'dealership'
               ]
-
     def form_valid(self, form):
         form.instance.creator = self.request.user
         return super().form_valid(form)
@@ -63,7 +63,8 @@ class CarUpdateView(LoginRequiredMixin, UpdateView):
               'province',
               'phone',
               'email', 
-              'status'
+              'status',
+              'dealership'
               ]
 
     def form_valid(self, form):
@@ -72,19 +73,18 @@ class CarUpdateView(LoginRequiredMixin, UpdateView):
 
     def test_func(self):
         car = self.get_object()
-        if self.request.user == car.author:
+        if self.request.user == car.creator:
             return True
         return False
 
-class CarDeleteView(LoginRequiredMixin, DeleteView):
+class CarDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Carsforsale
     template_name= 'carsforsale/car_delete.html'
-    # messages.success(request, 'Car successfully deleted')n 
     success_url= '/'
 
     def test_func(self):
         car = self.get_object()
-        if self.request.user == car.author:
+        if self.request.user == car.creator:
             return True
         return False
 

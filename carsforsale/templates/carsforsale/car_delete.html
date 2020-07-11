@@ -16,10 +16,9 @@
     <fieldset class='form-group p-2'>
     <h2>Are you sure you want to delete {{ object.title }} </h2>
 <div class="form-group">
-    <input type="submit" class='btn btn-outline-danger' value="Yes">
+    <button type="submit" class='btn btn-danger' value="Yes">Yes</button>
     <a href="{% url 'car_info' object.id %}" class='btn btn-outline-secondary large' >Cancel</a>
 </div>
 </form>
 </div>
-
 {%endblock%}

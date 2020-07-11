@@ -33,10 +33,10 @@
   </form>
   <div>
     <div class="container">
-      <div class="inner bg-light">
+      <div class="inner">
         {% if messages %}
           {% for message in messages %}
-            <div class="errormessage">
+            <div class="alert alert-{{ message.tags }}">
               {{ message }} 
             </div>
           {% endfor %}

@@ -20,7 +20,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'carsforsale',
-    'account',
+    'account.apps.AccountConfig',
     'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',

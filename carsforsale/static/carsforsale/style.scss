@@ -9,6 +9,7 @@
     padding: 0%;
     box-sizing: border-box;
     font-family: 'Raleway';
+    letter-spacing: 0.2rem;
 
 }
 body{
@@ -87,7 +88,7 @@ h3 {
     text-align: center;
     font-size: 500%;
     background-size: cover;
-    margin: 1rem -1rem;
+    margin: 1rem -3rem;
     text-transform: uppercase;
  }
 
@@ -124,14 +125,7 @@ fieldset {
 
     
 }
-.btn {
-    font-size: 20px;
-    font-weight: 700;
-    margin: 1rem;
-    padding:2rem;
-    border: none;
-    width: 200px;
-}
+
 .searchbtn {
   padding: 0.6rem 0.8rem;
   margin: 0.1rem;
@@ -163,7 +157,6 @@ fieldset {
     color: $primary-color;
 }
 .myfield{
-    // background-color: #;
     padding: 20px;
     text-align: center;
     font-size: 160%;
@@ -177,7 +170,8 @@ fieldset {
 
 .item{
     border: #06623b solid;
-    height: 50%
+    height: 50%;
+    padding:1rem;
 }
 .item:hover{
     border: none;
@@ -185,6 +179,18 @@ fieldset {
     transition: ease-in-out;
 }
 
+.available {
+    color: green;
+    border: 1px green solid;
+    background: rgb(173, 255, 173);
+    padding: 0.42rem;
+}
+.sold {
+    color: red;
+    border: 1px red solid;
+    background: #eeb2b2;
+    padding: 0.42rem;
+}
 .cartitle {
     font-size: xx-large;
     margin-bottom: 1%;
@@ -194,13 +200,13 @@ fieldset {
     font-size: larger;
 }
 
-ul {
-   margin: 2%;
-}
-li {
-    margin: 10px;
-    padding: 10px;
-}
+// ul {
+//    margin: 2%;
+// }
+// li {
+//     margin: 10px;
+//     padding: 10px;
+// }
 p {
     color: rgb(33, 46, 45);
     font-size: 28 px;
@@ -219,18 +225,33 @@ img:active {
     height: 70%;
  }
  
+ .car_details{
+    columns: 2;
+    // line-height: 1.5;
+    padding: 0.5rem 0;
+    align-items: center;
+    vertical-align: middle;
+    letter-spacing: 0.2rem;
+} 
 
- .carinfo_para {
-     height: auto;
-     padding: 0.2rem 14rem;
+ .carinfo_list {
+     height: 50px;
+     padding: 0.2rem;
+     justify-content: space-between;
  }
 
 .grey {
     background-color: grey;
     color: ivory;
 }
+.description {
+    margin-bottom: 10%;
+    padding: 1rem;
+    letter-spacing: 0.2rem;
+}
 }
 .large {
     font-size: 1.2rem;
 }
+
 

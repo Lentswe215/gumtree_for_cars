@@ -7,6 +7,7 @@
     {% if user.is_authenticated%}
     <li><a href="account/profile">Profile</a></li>
     <li><a href="/postcar">Create car post</a></li>
+    <li>{{ user  }}</li>
     <li><a href="/account/logout">Logout</a></li>
     {% else %}
     <li><a href="/account/register">Register</a></li>
@@ -20,7 +21,13 @@
     <a href="/car_information/{{car.id}}">  
     <li class="item">
             <h4 class="cartitle">{{ car.title }}</h4>
-            <p class="datetime">{{ car.date }}</p>
+            <p>Posted by {{ car.creator.first_name }}</p>
+            <p class="datetime">{{ car.date|date:"d F Y" }}</p>
+            {% if car.status == 'available' %}
+             <p>Status: <span class='available'>Available</span></p>
+            {% else %}
+             <p>Status: <span class='sold'>Sold</span></p>
+            {% endif %}
            <img src="{{car.car_picture.url}}" width="500px"class="z-depth-2">
            <p class="price">{{car.price }}</p>    
     </li>

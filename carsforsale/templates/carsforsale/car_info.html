@@ -1,7 +1,7 @@
 {% extends 'carsforsale/layout.html' %}
 {% block navlinks %}
     {% if user.is_authenticated%}
-    <li><a href="account/profile">Profile</a></li>
+    <li><a href="/account/profile">Profile</a></li>
     <li><a href="/postcar">Create car post</a></li>
     <li><a href="/account/logout">Logout</a></li>
     {% else %}
@@ -12,25 +12,43 @@
 {% block content %}
 <h3 class="car_info_heading">{{ object.title }}</h4>
 <div class="myfield col s12 m2">
-   <p class="carinfo_para z-depth-4">Posted by: {{ object.creator}}</p>
+<p class="carinfo_list z-depth-1">Posted by: {{ object.creator.first_name}}</p>
    {% if object.creator == user %}
    <a href="{% url 'update_car' object.id %}" class='btn btn-primary'>Update</a>
    <a href="{% url 'delete_car' object.id %}" class='btn btn-danger'>Delete</a>
    {% endif %}
-    <p class="datetime"> <b>Posted:</b> {{object.date }}</p><br>
-    
-   <img src="{{ object.car_picture.url }}" width="500px" class="z-depth-5">
+
    
-   <p class="price z-depth-4">{{ object.price}}</p>
-   <p class="carinfo_para grey z-depth-1"><b>Year:</b><br>{{ object.manufactured }}</p>
-   <p class="carinfo_para z-depth-4"><b>Mileage(km):</b><br>{{object.mileage}}</p>
-   <p class="carinfo_para grey z-depth-1"><b>Transmission:</b> <br>{{ object.transmission }}</p>
-   <p class="carinfo_para z-depth-4"><b>Fuel type:</b><br>{{ object.fuel_type }}</p>   
-   <p class="carinfo_para grey z-depth-1"><b>Color: </b><br>{{ object.color }}</p>
-   <p class="carinfo_para z-depth-4 desc"><b>Description:</b><br>{{ object.car_description }}</p>
-   <p class="carinfo_para grey z-depth-1"><b>Area:</b><br>{{ object.city }}, {{object.province}}</p>
-   <p class="carinfo_para z-depth-4"><b>Phone: </b><br>{{ object.phone}}</p>
-   <p class="carinfo_para grey z-depth-1"><b>Email: </b><br>{{ object.email }}</p>
+    <p class="datetime"> <b>Posted:</b> {{ object.date|date:"d F Y"  }}</p>
+    {% if object.status == 'available' %}
+   <p>Status: <span class='available'>Available</span></p>
+   {% else %}
+   <p>Status: <span class='sold'>Sold</span></p>
+   {% endif %}
+   <img src="{{ object.car_picture.url }}" width="500px" class="z-depth-5">
+   <p class="price z-depth-1"> {{ object.price}}</p>
+   <ul class="car_details grey">
+        <li class="carinfo_list z-depth-1"><b>Year: </b> {{ object.manufactured }} </li>
+        <li class="carinfo_list z-depth-1"><b>Mileage(km):</b> {{ object.mileage }}</li>
+    </ul>
+    <ul class="car_details grey">
+        <li class="carinfo_list z-depth-1"><b>Transmission:</b> {{ object.transmission }}</li>
+        <li class="carinfo_list z-depth-1"><b>Fuel type:</b> {{ object.fuel_type }}</li>   
+    </ul>
+    <ul class="car_details grey">
+        <li class="carinfo_list z-depth-1"><b>Color:</b> {{ object.color }}</li>
+        <li class="carinfo_list z-depth-1"><b>Area:</b> {{ object.city }}, {{object.province}}</li>
+    </ul>
+    <ul class="car_details grey">
+        <li class="carinfo_list z-depth-1"><b>Phone:</b> {{ object.phone}}</li>
+        <li class="carinfo_list z-depth-1"><b>Email:</b> {{ object.email }}</li>
+    </ul>
+
+    <ul class="car_details grey">
+        <li class="carinfo_list z-depth-1"><b>Dealership: </b>{{ object.dealership}}</li>
+        <li class="carinfo_list z-depth-1"></li>
+    </ul>
+    <p class="description z-depth-1"><b>Description:</b><br>{{ object.car_description }}</p>
 
    
 
