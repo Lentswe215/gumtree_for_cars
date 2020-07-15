@@ -17,4 +17,6 @@ Gumtree for cars is website where you can find different cars that are  for sale
 
 - Visit the following url http://localhost:8000
 
+## Demo of my project
 ![](gumtree.gif)
+
