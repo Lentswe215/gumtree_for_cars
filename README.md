@@ -2,7 +2,7 @@
 Gumtree for cars is website where you can find different cars that are  for sale and get more information about the cars you are interested in. 
 
 ## Setup 
-- To run this project on your device you will need `Python3`, `pip3` and `Django`
+- To run this project on your device you will need `Python`, `pip3` and `Django`
 
 - You will need latest python version `$ sudo apt install python`
 
@@ -16,3 +16,5 @@ Gumtree for cars is website where you can find different cars that are  for sale
 - Run the server `$ python manage.py runserver`
 
 - Visit the following url http://localhost:8000
+
+![](gumtree.gif)
