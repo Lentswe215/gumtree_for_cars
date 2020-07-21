@@ -20,6 +20,8 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'carsforsale',
+    'account.apps.AccountConfig',
+    'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -110,3 +112,9 @@ STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'carsforsale/media')
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+LOGIN_REDIRECT_URL= '/'
+
+LOGIN_URL = 'login'

@@ -1,0 +1,35 @@
+{% extends 'carsforsale/layout.html' %}
+{% load crispy_forms_tags %} 
+{% block navlinks %}
+    <li><a href="/">Home</a></li>
+    <li><a href="/postcar">Create car post</a></li>
+    <li><a href="/account/logout">Logout</a></li>
+{% endblock %}
+{% block content %}
+    <h3 class="heading bg-dark">
+        {{ user.username }}
+    </h3>
+    <div class="content-section ">
+        <div class="media-body">
+            <h1 class="profile_info">Firstname : {{ user.first_name}}</h1>
+            <h1 class="profile_info">Lastname : {{ user.last_name}}</h1>
+            <h1 class="profile_info">Email : {{ user.email }}</h1>
+            <h1 class="profile_info">Dealership : {{ user.profile.Dealership }}</h1>
+        </div>
+    </div>
+    <br><br>
+
+ <h1 class="heading bg-warning mt-5">Update your profile</h1>
+
+<form enctype="multipart/form-data" class="bg-dark" method="POST">
+    {% csrf_token %}
+    <fieldset class="form-group bg-dark p-5">
+      {{ user_form|crispy }}
+      {{ profile_form|crispy }}
+
+    </fieldset>
+    <div class=''>
+      <input type="submit" class="btn btn-info m-3 p-1 mybtn" value="Update" />
+    </div>
+  </form>
+{% endblock %}

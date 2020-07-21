@@ -1,0 +1,11 @@
+{% extends 'carsforsale/layout.html' %}
+{% block navlinks %}
+    <li><a href="/">Home</a></li>
+    <li><a href="/account/login">Login</a></li>
+    <li><a href="/account/register">Register</a></li>
+{% endblock %}
+{%block content %}
+<h2>You are logged out</h2>
+
+<small>You want to login again? <a href="/account/login">Login</a></small>
+{%endblock%}

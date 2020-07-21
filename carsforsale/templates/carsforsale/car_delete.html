@@ -1,0 +1,24 @@
+{% extends 'carsforsale/layout.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block navlinks %}
+    <li><a href="/">Home</a></li>
+    <li><a href="/account/profile">Profile</a></li>
+    <li><a href="/account/logout">Logout</a></li>
+{% endblock %}
+
+{%block content %}
+<h3 class="heading bg-danger">Delete car</h3>
+<div>
+<form  method="POST">
+    {% csrf_token %}
+    <fieldset class='form-group p-2'>
+    <h2>Are you sure you want to delete {{ object.title }} </h2>
+<div class="form-group">
+    <button type="submit" class='btn btn-danger' value="Yes">Yes</button>
+    <a href="{% url 'car_info' object.id %}" class='btn btn-outline-secondary large' >Cancel</a>
+</div>
+</form>
+</div>
+{%endblock%}

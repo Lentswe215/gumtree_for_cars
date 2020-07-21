@@ -1,0 +1,257 @@
+ @import 'colors';
+ @import 'backcolors';
+ @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Passero+One&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
+
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: 'Raleway';
+    letter-spacing: 0.2rem;
+
+}
+body{
+    background: #f4f4f4;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+nav {
+    position: fixed;
+}
+.navbar {
+    background: linear-gradient(to right bottom, #cac8c8, #f4f4f4,#cac8c8);
+    opacity: 0.9;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2.5rem;
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    top:0;
+    border-bottom: 2px #053521 solid;
+   
+    h1 {
+        font-size: 3.4rem;
+        font-family: 'Dancing Script', cursive !important;
+
+    }
+    ul {
+        list-style: none;
+        display: flex;
+        font-size: 1.5rem;
+        align-items: center;
+        justify-content: space-between;
+
+        li {
+            margin: 0 0.3rem;
+        }
+        
+    }
+
+    a{
+        color: #053521;
+        text-decoration: none;
+        padding:  0.45rem;
+        margin: 0 0.25rem;
+        font-weight: 700;
+
+
+        &:hover {
+            color: $light-color;
+            background: #06623b;
+        }
+    }
+}
+
+.myfield a:hover {
+    opacity: 0.5;
+    text-decoration-color: red;
+    text-decoration: none;
+}
+.container {
+ width:67vw;
+ margin: 1.2rem auto;
+
+}
+.cars_heading {
+    background-color: #053521;
+    color: #dae1e7;
+    font-size: 76px;
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+    font-size: 500%;
+    background-size: cover;
+    margin: 1rem -3rem;
+    text-transform: uppercase;
+ }
+
+.heading {
+    color: #fff;
+    font-size: 76px;
+    text-align: center;
+}
+
+
+.inner {
+    width: 100%;
+    border: none;
+}
+
+.row {
+    background-color: #dae1e7;
+    width:100%;
+    padding: 0.4em 31em;
+    margin-top: 1%;
+    vertical-align: middle;
+}
+fieldset {
+    background-color: #cac8c8;
+    color:#333;
+    font-family: sans-serif;
+    font-size: 1.5rem;
+    margin: 0 auto;
+
+    input {
+        width: 30%;
+        height: 25px;
+    }
+
+    
+}
+
+.searchbtn {
+  padding: 0.6rem 0.8rem;
+  margin: 0.1rem;
+  line-height: 1.2;
+  border: none;
+  vertical-align: middle;
+  background-color: #053521;
+  color: #dae1e7;
+}
+.searchbtn:hover {
+  background-color: #03683e;
+    
+}
+.car_info_heading {
+    background-color: #035aa6;
+    color: cornsilk;
+    font-size: 56px;
+    text-align: center;
+    align-items: center;
+}
+.propic {
+    width: 60%;
+    border-radius: 50%;
+    margin: 1rem 18%;
+}
+
+.profile_info {
+    font-size: 3rem;
+    color: $primary-color;
+}
+.myfield{
+    padding: 20px;
+    text-align: center;
+    font-size: 160%;
+
+    a {
+        text-decoration: none;
+    }
+    li{
+        list-style: none;
+    }
+
+.item{
+    border: #06623b solid;
+    height: 50%;
+    padding:1rem;
+}
+.item:hover{
+    border: none;
+    background-color: rgb(182, 199, 231);
+    transition: ease-in-out;
+}
+
+.available {
+    color: green;
+    border: 1px green solid;
+    background: rgb(173, 255, 173);
+    padding: 0.42rem;
+}
+.sold {
+    color: red;
+    border: 1px red solid;
+    background: #eeb2b2;
+    padding: 0.42rem;
+}
+.cartitle {
+    font-size: xx-large;
+    margin-bottom: 1%;
+}
+.datetime {
+    color: #035aa6;
+    font-size: larger;
+}
+
+// ul {
+//    margin: 2%;
+// }
+// li {
+//     margin: 10px;
+//     padding: 10px;
+// }
+p {
+    color: rgb(33, 46, 45);
+    font-size: 28 px;
+}
+
+.price {
+    color: red;
+    font-size: 150px;
+    text-decoration: none;
+}
+
+
+img:active {
+    position: relative;
+    width: 70%;
+    height: 70%;
+ }
+ 
+ .car_details{
+    columns: 2;
+    // line-height: 1.5;
+    padding: 0.5rem 0;
+    align-items: center;
+    vertical-align: middle;
+    letter-spacing: 0.2rem;
+} 
+
+ .carinfo_list {
+     height: 50px;
+     padding: 0.2rem;
+     justify-content: space-between;
+ }
+
+.grey {
+    background-color: grey;
+    color: ivory;
+}
+.description {
+    margin-bottom: 10%;
+    padding: 1rem;
+    letter-spacing: 0.2rem;
+}
+}
+.large {
+    font-size: 1.2rem;
+}
+
+

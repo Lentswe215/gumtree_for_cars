@@ -1,16 +1,23 @@
 {% extends 'carsforsale/layout.html' %}
-{% block pagetitle %}
-<title>search</title>
+
+{% block navlinks %}
+    {% if user.is_authenticated%}
+    <li><a href="/account/profile">Profile</a></li>
+    <li><a href="/postcar">Create car post</a></li>
+    <li><a href="/account/logout">Logout</a></li>
+    {% else %}
+    <li><a href="/account/register">Register</a></li>
+    <li><a href="/account/login">Login</a></li>
+    {% endif %}
 {% endblock %}
-
 {% block content %}
-
 {% if messages%}
 <ul class="messages">
     {% for message in messages %}
-    <li class="errormessage">* {{ message }}</li>
     {% endfor %}
 </ul>
+{% else %}
+    <h3 class="cars_heading">{{ mytitle}}</h3>
 {% endif %}
 </div>
 {% if cars%}
@@ -38,3 +45,6 @@
     }
 </style>
 {% endblock %}
+
+
+
