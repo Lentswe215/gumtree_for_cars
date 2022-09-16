@@ -27,7 +27,7 @@ importlib-resources==1.5.0
 keyring==10.6.0
 keyrings.alt==3.0
 louis==3.5.0
-Mako==1.0.7
+Mako==1.2.2
 MarkupSafe==1.0
 marshmallow==3.6.1
 menulibre==2.2.1
